@@ -1,7 +1,15 @@
 class Player
-  attr_accessor :lives, :name
+  attr_reader :lives, :name
   def initialize(name,lives = 3)
     self.lives = lives
-    self.name = name
+    @name = name
   end
+
+  def decrement_life()
+    self.lives -= 1
+  end
+
+  private
+  attr_writer :lives
+
 end
