@@ -1,14 +1,17 @@
 class Question
-  attr_reader :question, :answer
+  attr_reader :question
 
   def initialize()
     create_question()
   end
 
+  def check_answer(player_answer)
+    player_answer == answer
+  end
 
   private
-
-  attr_writer :question, :answer
+  attr_accessor :answer
+  attr_writer :question
 
   def create_question()
     number1 = rand(20) + 1
